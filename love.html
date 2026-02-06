@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Valentine Letter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- SAME FONTS AS ORIGINAL -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet"
+        />
+    </head>
+    <audio id="bg-music" loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+    const music = document.getElementById("bg-music");
+
+    document.body.addEventListener("click", () => {
+        music.play();
+    }, { once: true });
+    </script>
+
+
+
+    <body>
+        <!-- Letter Screen (already open + final) -->
+        <div id="letter-container" style="display: flex">
+        <div class="letter-window open final">
+
+            <h1 id="letter-title">Yippeeee!</h1>
+
+            <img
+            src="cat_dance.gif"
+            class="cat"
+            id="letter-cat"
+            />
+
+            <!-- Buttons hidden (same as original final state) -->
+            <div class="buttons" style="display: none"></div>
+
+            <!-- Final text exactly as original -->
+            <p id="final-text" class="final-text">
+            <strong>Valentine Date:</strong> Meow Restaurant at 7pm. Dress fancy!
+            </p>
+
+        </div>
+        </div>
+    </body>
+</html>
