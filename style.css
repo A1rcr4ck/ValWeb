@@ -435,3 +435,101 @@ display: inline-block;
     background-color: #c94444;
 }
 
+/* ===============================
+   RIGHT SIDE PREVIEW PANEL
+================================= */
+
+.song-preview {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 520px;        /* slightly wider */
+    min-height: 320px;   /* minimum size */
+    height: auto;        /* allow expansion */
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+
+    padding: 30px;
+    /* display: flex; */
+    gap: 25px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+
+    align-items: flex-start;
+
+    overflow: visible;   /* important */
+}
+.preview-details {
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.preview-details h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    word-break: break-word;
+}
+
+.preview-details p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    word-break: break-word;
+}
+
+
+/* When active */
+.song-preview.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.preview-image {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-top: 10px;
+    transition: opacity 0.4s ease;
+}
+
+
+.preview-details {
+    flex: 1;
+    color: white;
+}
+
+.preview-progress {
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 6px;
+    margin: 12px 0;
+    overflow: hidden;
+}
+
+.preview-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #ff6b6b;
+    transition: width 0.2s linear;
+}
+
+.preview-toggle {
+    background: #ff6b6b;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
