@@ -11,7 +11,7 @@
 </head>
 
 <body class="album-body">
-<h1 class="album-title">Our Beautiful Memories 📖</h1>
+<h1 class="album-title">You & Me&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
 <div class="book">
 
   <div class="page">
@@ -56,19 +56,38 @@
 
   <div class="page last-page">
     <div class="final-note">
-        <h2>And This Is Just The Beginning... ❤️</h2>
+        <!-- <h2>And cheers to forever... ❤️</h2> -->
         <p>
-            Every memory we’ve made is my favorite.
-            Every moment with you is my safe place.
-            And I can’t wait to fill many more pages
-            of this book called “Us”.
+            Every memory we've made is my favorite.
+            Every moment with you is my Escape.
+            Every day feels like Valentine’s Day to me when you’re by my side.
         </p>
-        <p><strong>I love you endlessly.</strong></p>
+        <p><strong>I love you, my World</strong></p>
     </div>
   </div>
 
 
 </div>
+<audio id="bg-music" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-toggle" class="music-btn">▶</button>
+
+<script>
+  const music = document.getElementById("bg-music");
+  const toggleBtn = document.getElementById("music-toggle");
+
+  toggleBtn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      toggleBtn.textContent = "❚❚";
+    } else {
+      music.pause();
+      toggleBtn.textContent = "▶";
+    }
+  });
+</script>
 
 <script src="album.js"></script>
 

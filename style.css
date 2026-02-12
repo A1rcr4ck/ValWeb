@@ -137,6 +137,13 @@ display: inline-block;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
 }
+.love-video-link {
+    /* margin-top: 14px; */
+    font-size: 18px;
+    text-decoration: none;
+    color: #e25555;
+    font-weight: bold;
+}
 
 /* =========================================
    FOR YOU PAGE – FULL TEXT VISIBILITY FIX
@@ -532,4 +539,24 @@ display: inline-block;
     color: white;
     font-size: 20px;
     cursor: pointer;
+}
+
+/* Music button */
+.music-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: #ff6b6b;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.album-heading {
+    padding-left: 120px;
 }
