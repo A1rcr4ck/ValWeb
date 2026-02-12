@@ -20,10 +20,17 @@
 
     <script>
     const music = document.getElementById("bg-music");
+    let isPlaying = false;
 
     document.body.addEventListener("click", () => {
+        if (!isPlaying) {
         music.play();
-    }, { once: true });
+        isPlaying = true;
+        } else {
+        music.pause();
+        isPlaying = false;
+        }
+    });
     </script>
 
 
@@ -32,9 +39,10 @@
         <!-- Letter Screen (already open + final) -->
         <div id="letter-container" style="display: flex">
         <div class="letter-window open final">
-
-            <h1 id="letter-title">Yippeeee!</h1>
-
+            <!-- Final text exactly as original -->
+            <p id="final-text" class="final-text">
+            Chakkarapenne.... Be my Valentine forever!
+            </p>
             <img
             src="cat_dance.gif"
             class="cat"
@@ -43,11 +51,7 @@
 
             <!-- Buttons hidden (same as original final state) -->
             <div class="buttons" style="display: none"></div>
-
-            <!-- Final text exactly as original -->
-            <p id="final-text" class="final-text">
-            <strong>Valentine Date:</strong> Meow Restaurant at 7pm. Dress fancy!
-            </p>
+            <a href="foryou.html">Click me</a>
 
         </div>
         </div>

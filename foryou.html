@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- SAME FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <!-- Optional background music (same as love.html) -->
+  <audio id="bg-music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    let isPlaying = false;
+
+    document.body.addEventListener("click", () => {
+      if (!isPlaying) {
+        music.play();
+        isPlaying = true;
+      } else {
+        music.pause();
+        isPlaying = false;
+      }
+    });
+  </script>
+
+  <!-- Letter Screen -->
+  <div id="letter-container" class="for-you-page" style="display: flex">
+  <div class="letter-window open final">
+
+      <p id="final-text" class="final-text">
+        My World,<br><br>
+        Thank you for being the most amazing person in my life. 
+        Thank you for being my constant source of joy and strength.
+        Thank you for making every moment with you feel like a gift. 
+        Thank you for being my best friend and my soulmate.
+        Thank you for believing in me and supporting me through everything. 
+        Thank you.<br><br>
+        So, In the most selfish way possible, I don't want anyone
+        to have your heart, feel your touch, kiss your lips, or be the reason you smile,
+        I want to be your last everything. <strong>I love You</strong>
+        <br><br>
+        <a href="gifts.html" class="video-link">
+        Click me 💗
+        </a>
+
+      </p>
+
+      <!-- <img
+        src="cat_dance.gif"
+        class="cat"
+        id="letter-cat"
+      /> -->
+
+      <!-- No buttons (same final-state structure) -->
+      <div class="buttons" style="display: none"></div>
+
+    </div>
+  </div>
+
+</body>
+</html>

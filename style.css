@@ -137,3 +137,301 @@ display: inline-block;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
 }
+
+/* =========================================
+   FOR YOU PAGE – FULL TEXT VISIBILITY FIX
+   ========================================= */
+
+.for-you-page .letter-window {
+    position: relative;
+}
+
+/* Text box inside window */
+.for-you-page .final-text {
+    width: 75%;
+    max-height: 45%;          /* KEY FIX: more vertical space */
+
+    margin-top: 12px;
+    padding: 18px 22px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    text-align: center;
+
+    overflow-y: auto;         /* scrolling enabled */
+    overflow-x: hidden;
+
+    background-color: rgba(255, 240, 240, 0.6);
+    border-radius: 14px;
+}
+
+/* Hide scrollbar but keep scrolling */
+.for-you-page .final-text::-webkit-scrollbar {
+    width: 0;
+}
+
+.for-you-page .final-text {
+    scrollbar-width: none;
+}
+
+.for-you-page .video-link {
+    margin-top: 14px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #e25555;
+    font-weight: bold;
+}
+
+.for-you-page .video-link:hover {
+    text-decoration: underline;
+}
+
+/* FOR YOU PAGE BUTTON */
+
+.for-you-page .gift-button-wrapper {
+    margin-top: 20px;
+}
+
+.for-you-page .gift-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    background-color: #e86b6b;
+    border-radius: 12px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.for-you-page .gift-btn:hover {
+    transform: scale(1.05);
+    background-color: #d45858;
+}
+/* =================================
+   GIFT PAGE IMAGE FIX
+================================= */
+
+.gift-page .gift-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.gift-page .gift-box {
+    width: 200px;
+    height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    text-decoration: none;
+    color: black;
+
+    background-color: rgba(255,240,240,0.6);
+    border-radius: 16px;
+    padding: 12px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gift-page .gift-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.gift-page .gift-box p {
+    margin: 8px 0 0 0;
+    font-size: 18px;
+}
+
+.gift-page .gift-box:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.album-body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("heart-bg.jpg");
+    background-size: cover;
+}
+
+.book {
+    position: relative;
+    width: 700px;
+    height: 450px;
+    perspective: 2000px;
+}
+
+/* Flipping pages container */
+.pages {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Photo Pages */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    overflow: hidden;
+
+    transform-origin: left center;
+    transition: transform 1s cubic-bezier(.65,.05,.36,1);
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page.flipped {
+    transform: rotateY(-180deg);
+}
+
+/* Stationary Final Page */
+.final-note-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #fff5f5, #ffeaea);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    z-index: 0; /* always bottom */
+}
+
+.final-note {
+    text-align: center;
+}
+
+/* ===============================
+   SONGS PAGE
+================================= */
+
+.songs-body {
+    margin: 0;
+    height: 100vh;              /* full screen */
+    overflow: hidden;           /* remove scrolling */
+
+    background-image: url("us.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: 'Pixelify Sans', sans-serif;
+
+    display: flex;
+    align-items: center;
+}
+
+.songs-body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); /* adjust darkness here */
+    z-index: -1;
+}
+
+
+.music-container {
+    position: absolute;
+    left: 40px;          /* distance from extreme left */
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 420px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.songs-title {
+    position: absolute;
+    left: 40px;
+    top: 80px;
+    color: white;
+}
+
+
+
+.song-card {
+    background: rgba(255,240,240,0.85);
+    padding: 15px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.song-card:hover {
+    transform: scale(1.02);
+}
+
+.song-info h3 {
+    margin: 0;
+}
+
+.song-info p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+.controls button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #e86b6b;
+    color: white;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+}
+.toggle-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #e86b6b;
+    color: white;
+    font-size: 18px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.toggle-btn:active {
+    transform: scale(0.9);
+}
+
+.song-card.playing .toggle-btn {
+    background-color: #c94444;
+}
+
